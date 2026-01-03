@@ -201,7 +201,7 @@
         const payload = Object.fromEntries(formData.entries());
 
         try {
-            const res = await fetch('http://captaingroup.digital/send-email', {
+            const res = await fetch('http://captaingroup/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -224,5 +224,6 @@
     });
 
 </script>
+
 
 </html>
