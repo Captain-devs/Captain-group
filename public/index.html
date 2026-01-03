@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Captain Group offers expert education consulting for Nigerian students and digital solutions including web development, graphics design, and computer services.">
+    <meta name="keywords"
+        content="education consulting, university admissions, digital marketing, web development, graphics design, computer repair, Nigeria">
+    <title>Captain Group - Education and Digital Solutions</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+
+
+
+        function validateForm(event) {
+            const service = document.querySelector('select[name="service_interest"]').value;
+            const name = document.querySelector('input[name="name"]').value.trim();
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const message = document.querySelector('textarea[name="message"]').value.trim();
+            const number = document.querySelector('input[name="number"]').value.trim();
+            console.log(number)
+
+            if (!service || !name || !number || !email || !message) {
+                alert('All fields are required.');
+                event.preventDefault();
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>
+                <img src="logo.png" alt="Captain Group Logo" class="logo-icon">
+            </h1>
+            <nav>
+                <a href="#educonsult">EduConsult</a>
+                <a href="#digitalhub">Digital Hub</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>Steering Success: Education and Digital Innovation</h2>
+            <p>The Captain Group provides expert consulting and cutting-edge digital solutions for a new era of growth.
+            </p>
+            <a href="#contact" class="button">Inquire Now</a>
+        </div>
+    </section>
+
+    <section id="educonsult" class="brand-section educonsult-bg">
+        <div class="container">
+            <h3>Captain EduConsult</h3>
+            <p class="tagline">Your Navigator for Academic Success in Nigeria.</p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h4>University and Course Selection</h4>
+                    <p>Expert guidance on choosing the right institutions and courses tailored to your goals and
+                        Nigeria's educational landscape.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Admission Processes</h4>
+                    <p>Assistance with applications, essay reviews, and navigating admission requirements for Nigerian
+                        and international schools.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Post-Admission Support</h4>
+                    <p>Help with acceptance fees, tuition payments, and other post-admission processes to ensure a
+                        smooth start.</p>
+                </div>
+            </div>
+            <a href="#contact" class="button-secondary">Start with EduConsult</a>
+        </div>
+    </section>
+
+    <section id="digitalhub" class="brand-section digitalhub-bg">
+        <div class="container">
+            <h3>Captain Digital Hub</h3>
+            <p class="tagline">Building the Future, Digitally.</p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h4>Web Development</h4>
+                    <p>Custom-built, fast, and scalable websites designed to convert visitors into clients.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Graphics Design</h4>
+                    <p>Creative and professional graphic design services for branding, marketing materials, and digital
+                        assets.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Computer Sales and Repair</h4>
+                    <p>Sales of new and refurbished computers, along with repair services to keep your devices running
+                        smoothly.</p>
+                </div>
+            </div>
+            <a href="#contact" class="button-secondary">Launch with Digital Hub</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h3>The Captain Group Advantage</h3>
+            <p>The Captain Group combines expertise in education and technology, offering a holistic approach to
+                personal and business development. Whether you're planning a career or building a digital enterprise, we
+                provide the strategic guidance you need.</p>
+            <p class="quote">"Guiding students and businesses from potential to performance."</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p>Tell us which service you're interested in, and schedule your free introductory call today. Let's chart
+                your course together.</p>
+            <p>You can reach us on:</p>
+            <div class="social-media">
+                <a href="mailto:captaingroup247@gmail.com" class="social-button"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://wa.me/2349136408669" class="social-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://instagram.com/captaindigitalhub" class="social-button"><i class="fab fa-instagram"></i>
+                    Instagram</a>
+            </div>
+            <form id="contactForm">
+                <input type="text" name="website" style="display:none;" autocomplete="off">
+
+                <select name="service_interest" required>
+                    <option value="">Select a Service...</option>
+                    <option value="EduConsult">Captain EduConsult</option>
+                    <option value="DigitalHub">Captain Digital Hub</option>
+                    <option value="General">General Inquiry (Captain Group)</option>
+                </select>
+
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="number" placeholder="Your Phone Number" required>
+                <textarea name="message" placeholder="Describe your project or goal." required></textarea>
+
+                <button type="submit" class="button">Send Inquiry</button>
+            </form>
+
+            <!-- Response Message -->
+            <div id="formResponse" class="form-response"></div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Captain Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+    const input = document.querySelector('input[name="number"]');
+    console.log(input)
+
+    input.addEventListener('input', () => {
+        // Remove everything except digits and +
+        let value = input.value.replace(/[^0-9+]/g, '');
+
+        // Allow only one + and only at the start
+        if (value.includes('+')) {
+            value = '+' + value.replace(/\+/g, '');
+        }
+
+        input.value = value;
+    });
+
+    const form = document.getElementById('contactForm');
+    const responseBox = document.getElementById('formResponse');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        responseBox.textContent = '';
+        responseBox.className = 'form-response loading';
+        responseBox.textContent = 'Sending message...';
+
+        // Convert form to JSON
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+            const res = await fetch('http://captaingroup.digital/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.message || 'Something went wrong');
+
+            responseBox.className = 'form-response success';
+            responseBox.textContent = data.message || 'Message sent successfully!';
+            form.reset();
+
+        } catch (err) {
+            responseBox.className = 'form-response error';
+            responseBox.textContent = err.message || 'Failed to send message.';
+        }
+    });
+
+</script>
+
+</html>
